@@ -7,7 +7,7 @@ RUN apt-get install -y gcc g++ make libncurses-dev qemu rsync patch wget unzip b
 
 # buildroot编译x86_64 rootfs需要32位库
 RUN dpkg --add-architecture i386 \
-	&& apt update \
+	&& apt-get update \
 	&& apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
 
 # 使用apt install gdb会出现Remote 'g' packet reply is too long错误，所以修改gdb源码，然后安装gdb
