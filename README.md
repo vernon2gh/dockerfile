@@ -1,4 +1,4 @@
-# This is dockerfile for compile linux-kernel
+# This is dockerfile for building docker images.
 
 To build docker images, as:
 
