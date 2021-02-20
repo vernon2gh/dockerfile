@@ -10,7 +10,7 @@ RUN dpkg --add-architecture i386 \
 	&& apt-get update \
 	&& apt-get install -y libc6:i386 libstdc++6:i386 zlib1g:i386
 
-# 使用apt install gdb会出现Remote 'g' packet reply is too long错误，所以修改gdb源码，然后安装gdb
+# 使用apt安装的gdb，执行时会出现Remote 'g' packet reply is too long错误，所以修改gdb源码，然后安装gdb
 COPY patch/gdb/gdb_7_8.patch /
 RUN wget http://ftp.gnu.org/gnu/gdb/gdb-7.8.tar.xz \
 	&& tar -xf gdb-7.8.tar.xz \
