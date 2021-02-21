@@ -14,7 +14,7 @@ RUN wget http://ftp.gnu.org/gnu/gdb/gdb-7.8.tar.xz \
 	&& patch -p1 < gdb_7_8.patch \
 	&& ./configure \
 	&& make \
-	&& sudo make install \
+	&& make install \
 	&& cd / \
 	&& rm -fr gdb-7.8*
 
