@@ -3,7 +3,7 @@ FROM ubuntu:18.04
 RUN apt update
 
 #### x86_64 ####
-RUN apt install -y gcc gdb make flex bison libncurses-dev libssl-dev bc libelf-dev file g++ patch wget cpio unzip rsync python3 perl qemu
+RUN apt install -y gcc gdb make flex bison libncurses-dev libssl-dev bc libelf-dev file g++ patch wget cpio unzip rsync python3 perl qemu kmod
 
 #### arm64 ####
 RUN cd /opt \
