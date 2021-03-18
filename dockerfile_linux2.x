@@ -3,7 +3,10 @@ FROM ubuntu:14.04
 RUN apt-get update
 
 #### x86_64 ####
-RUN apt-get install -y gcc g++ make libncurses-dev qemu rsync patch wget unzip bc xz-utils
+RUN apt-get install -y gcc g++ make libncurses-dev qemu rsync patch wget unzip bc xz-utils python-pip
+
+RUN pip install compiledb \
+	&& echo "eval \"\$(_COMPILEDB_COMPLETE=source compiledb)\"" >> ~/.bashrc
 
 # buildroot编译x86_64 rootfs需要32位库
 RUN dpkg --add-architecture i386 \
